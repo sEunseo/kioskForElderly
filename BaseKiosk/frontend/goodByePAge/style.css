@@ -1,0 +1,34 @@
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+}
+
+body {
+    margin: 0;
+    background-color: #FFB57F
+}
+
+button {
+    margin-top: 15%;
+    color: black !important;
+    background-color: #FFEB00 !important;
+    border: none !important;
+    width: 50%;
+}
+
+h5 {
+    color: aliceblue;
+    font-size: xx-large
+}
+
+h4 {
+    color: #A80E0E;
+    font-size: large
+}
+.holder{
+    margin-top: 10%;
+}
+.margin {
+    margin-top: 2%;
+}

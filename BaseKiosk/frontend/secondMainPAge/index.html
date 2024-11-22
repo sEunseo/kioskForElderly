@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.2.0/mdb.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/style.css"> <!-- Gem style -->
+
+  	
+	<title>Side Cart</title>
+</head>
+<body class="foo" onload="getcategories()">
+	<header>
+		<div id="logo"><img src="img/logo.svg" alt="Homepage" width="17%" style="float: left;"></div>
+		<div id="cd-hamburger-menu"><a class="cd-img-replace" href="#0">Menu</a></div>
+		<div id="cd-cart-trigger"><a class="cd-img-replace" href="#0">Cart</a></div>
+	</header>
+
+	<nav id="main-nav">
+		<ul id="menu">
+
+	
+			<!-- <li><a href="#0">Home</a></li>
+			<li><a href="#0">About</a></li>
+			<li><a href="#0">Services</a></li>
+			<li><a href="#0">Gallery</a></li>
+			<li><a href="#0">Contact</a></li> -->
+		</ul>
+	</nav>
+
+	<main>
+		<ul id="cd-gallery-items" class="cd-container" >
+
+		</ul> <!-- cd-gallery-items -->
+	</main>
+
+	<div id="cd-shadow-layer"></div>
+
+	<div id="cd-cart">
+		<h2 id="myorder"></h2>
+		<ul class="cd-cart-items" id="cart-items">
+			
+		</ul> <!-- cd-cart-items -->
+
+		<div class="cd-cart-total">
+			<p>Total <span id="total">0</span> DH</p>
+		</div> <!-- cd-cart-total -->
+		<div class="form-outline">
+			<input type="text" id="formControlSm" class="form-control form-control-sm" />
+			<label class="form-label" for="formControlDefault" style="color:#ff6a00;">Tap Here If You Have Code Promo</label>
+		</div>
+		<div class="form-outline">
+			<input type="text" id="formControlSmfid" class="form-control form-control-sm" />
+			<label class="form-label" for="formControlDefault" style="color:#ff6a00;">Tap Here If You Have card fid code</label>
+		</div>
+		<a class="checkout-btn" onclick="submitCommand()" >Checkout</a>
+		
+		<p class="cd-go-to-cart"><a href="#0">Go to cart page</a></p>
+	</div> <!-- cd-cart -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+			integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+			crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+			integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+			crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+			integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+			crossorigin="anonymous"></script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/fetch.js"></script>
+<script src="js/main.js"></script> <!-- Gem jQuery -->
+</body>
+</html>

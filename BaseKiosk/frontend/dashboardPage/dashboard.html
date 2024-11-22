@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <title>Dashboard</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="public/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!--external css-->
+  <link href="public/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <link href="public/lib/advanced-datatable/css/demo_page.css" rel="stylesheet" />
+  <link href="public/lib/advanced-datatable/css/demo_table.css" rel="stylesheet" />
+  <link rel="stylesheet" href="public/lib/advanced-datatable/css/DT_bootstrap.css" />
+  <!-- Custom styles for this template -->
+  <link href="public/css/style.css" rel="stylesheet">
+  <link href="public/css/style-responsive.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body onload="getData()">
+  <section id="container">
+
+    <!-- **********************************************************************************************************************************************************
+        MAIN SIDEBAR MENU
+        *********************************************************************************************************************************************************** -->
+    <!--sidebar start-->
+    <aside>
+      <div id="sidebar" class="nav-collapse ">
+        <img src="public/img/logo.svg" alt="Homepage" width="70%" style="margin-top: 50%; margin-left: 15%;">
+        <!-- sidebar menu start-->
+        <ul class="sidebar-menu" id="nav-accordion">
+          <!-- <p class="centered"><a href="/"><img src="public/img/ui-sam.jpg" class="img-circle" width="80"></a></p>
+          <h5 class="centered">SupGestion</h5> -->
+
+          <li class="mt">
+
+          <li class="sub-menu">
+            <a class="active" href="javascript:;">
+              <i class="fa fa-th"></i>
+              <span>Stock</span>
+            </a>
+            <ul class="sub">
+              <li onclick="showCat()">Category</li>
+              <li onclick="showSubCat()">Sub Category</li>
+              <li onclick="showProd()">Product</li>
+            </ul>
+          </li>
+          </li>
+        </ul>
+        <!-- sidebar menu end-->
+      </div>
+    </aside>
+    <!--sidebar end-->
+    <!-- **********************************************************************************************************************************************************
+        MAIN CONTENT
+        *********************************************************************************************************************************************************** -->
+    <!--main content start-->
+    <section id="main-content">
+      <div class="container-fluid">
+        <img src="public/img/header.jpg" class="center-block" alt="">
+      </div>
+
+      <!-- wrapper ==> Category -->
+      <section id="showCat" class="wrapper" style="display: block;">
+        <h3><i class="fa fa-angle-right"> </i> Category </h3>
+        <div class="row">
+          <!-- page start-->
+          <div class="content-panel">
+            <div class="adv-table">
+              <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered"
+                id="hidden-table-info">
+                <thead>
+                  <tr>
+                    <button type="button" class="btn btn-light btn-sm" data-toggle="modal" data-target="#ModalCat">
+                      <img src="public/lib/advanced-datatable/images/details_open.png">
+                      Add New Category
+                    </button><br><br>
+                    <th class="center hidden-phone">Name :</th>
+                    <th class="hidden-phone" style="width: 20%;">Update</th>
+                    <th class="hidden-phone" style="width: 20%;">Delete</th>
+                  </tr>
+                </thead>
+                <tbody id="DashCat"></tbody>
+              </table>
+
+            </div>
+          </div>
+          <!-- page end-->
+        </div>
+
+        <!-- /row -->
+      </section>
+      <!-- /wrapper -->
+
+
+      <!-- wrapper ==> Sub.Category -->
+      <section id="showSubCat" class="wrapper" style="display: block;">
+        <h3><i class="fa fa-angle-right"> </i> Sub Category </h3>
+        <div class="row">
+          <!-- page start-->
+          <div class="content-panel">
+            <div class="adv-table">
+              <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered"
+                id="hidden-table-info">
+                <thead>
+                  <tr>
+                    <button type="button" class="btn btn-light btn-sm" data-toggle="modal" data-target="#ModalSubCat">
+                      <img src="public/lib/advanced-datatable/images/details_open.png">
+                      Add New SubCategory
+                    </button><br><br>
+                    <th class="center hidden-phone">Name :</th>
+                    <th class="center hidden-phone" style="width: 20%;">Update :</th>
+                    <th class="hidden-phone" style="width: 20%;">Delete</th>
+                  </tr>
+                </thead>
+                <tbody id="DashSubCat"></tbody>
+              </table>
+            </div>
+          </div>
+          <!-- page end-->
+        </div>
+        <!-- /row -->
+      </section>
+      <!-- /wrapper -->
+
+      <!-- wrapper ==> Product -->
+      <section id="showProd" class="wrapper" style="display: block;">
+        <h3><i class="fa fa-angle-right"> </i> Product </h3>
+        <div class="row">
+          <!-- page start-->
+          <div class="content-panel">
+            <div class="adv-table">
+              <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered"
+                id="hidden-table-info">
+                <thead>
+                  <tr>
+                    <button type="button" class="btn btn-light btn-sm" data-toggle="modal" data-target="#ModalProduct">
+                      <img src="public/lib/advanced-datatable/images/details_open.png">
+                      Add New Product
+                    </button><br><br>
+                    <th class="center hidden-phone">Name :</th>
+                    <th class="center hidden-phone" style="width: 20%;">Update :</th>
+                    <th class="hidden-phone" style="width: 20%;">Delete</th>
+                  </tr>
+                </thead>
+                <tbody id="Product"></tbody>
+              </table>
+            </div>
+          </div>
+          <!-- page end-->
+        </div>
+        <!-- /row -->
+      </section>
+      <!-- /wrapper -->
+    </section>
+    <!-- /MAIN CONTENT -->
+    <!--main content end-->
+
+
+  </section>
+
+  <!-- Modal Category -->
+  <div class="modal fade" id="ModalCat" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal Add Cat -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add New Category</h4>
+        </div>
+        <div class="modal-body">
+          <form id="formCat">
+            <div class="form-group">
+              <input type="text" class="form-control" name="category" id="category" placeholder="Category Name">
+            </div>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button onclick="sendData()" type="submit" class="btn btn-success">Save</button>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- Modal Update Cat-->
+  <div class="modal fade" id="ModalUpCat" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Update Category</h4>
+        </div>
+        <div class="modal-body">
+          <form id="formUpCat">
+            <div class="form-group">
+              <input type="text" class="form-control"  id="categoryUp" >
+            </div>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button onclick="UpdateCat()" type="submit" class="btn btn-success">Save</button>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-------------------------------------------------------------------------------------------------------------------------->
+
+  <!-- Modal Sub Category -->
+  <div class="modal fade" id="ModalSubCat" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal Add Cat -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add New Sub Category</h4>
+        </div>
+        <div class="modal-body">
+          <form id="formSubCat">
+            <div class="form-group">
+              <label for="">Select Category :</label>
+              <select name="" id=""></select>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="Subcategory" id="Subcategory" placeholder="Sub Category Name">
+            </div>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button onclick="sendData()" type="submit" class="btn btn-success">Save</button>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+    <!-- Modal Update SubCat-->
+    <div class="modal fade" id="ModalUpSubCat" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Update Sub Category</h4>
+          </div>
+          <div class="modal-body">
+            <form id="formUpCat">
+              <div class="form-group">
+                <input type="text" class="form-control"  id="SubcategoryUp" >
+              </div>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button onclick="UpdateCat()" type="submit" class="btn btn-success">Save</button>
+            </form>
+          </div>
+  
+        </div>
+  
+      </div>
+    </div>
+      <!-------------------------------------------------------------------------------------------------------------------------->
+
+  <!-- Modal Sub Category -->
+  <div class="modal fade" id="ModalProduct" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal Add Cat -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add New Product</h4>
+        </div>
+        <div class="modal-body">
+          <form id="formProduct">
+            <div class="form-group">
+              <label for="">Select Category :</label>
+              <select name="" id=""></select>
+            </div>
+            <div class="form-group">
+              <label for="">Select Sub Category :</label>
+              <select name="" id=""></select>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="Product" id="Product" placeholder="Product Name">
+            </div>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button onclick="sendData()" type="submit" class="btn btn-success">Save</button>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+    <!-- Modal Update Product-->
+    <div class="modal fade" id="ModalUpProduct" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Update Sub Category</h4>
+          </div>
+          <div class="modal-body">
+            <form id="formUpProduct">
+              <div class="form-group">
+                <input type="text" class="form-control"  id="ProductUp" >
+              </div>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button onclick="UpdateCat()" type="submit" class="btn btn-success">Save</button>
+            </form>
+          </div>
+  
+        </div>
+  
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script>
+    function showCat() {
+      var x = document.getElementById("showCat");
+
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+    function showSubCat() {
+      var x = document.getElementById("showSubCat");
+
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+    function showProd() {
+      var x = document.getElementById("showProd");
+
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+  </script>
+
+
+  <!-- js placed at the end of the document so the pages load faster -->
+  <script src="public/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" language="javascript" src="public/lib/advanced-datatable/js/jquery.js"></script>
+  <script src="public/lib/bootstrap/js/bootstrap.min.js"></script>
+  <script class="include" type="text/javascript" src="public/lib/jquery.dcjqaccordion.2.7.js"></script>
+  <script src="public/lib/jquery.scrollTo.min.js"></script>
+  <script src="public/lib/jquery.nicescroll.js" type="text/javascript"></script>
+  <script type="text/javascript" language="javascript"
+    src="public/lib/advanced-datatable/js/jquery.dataTables.js"></script>
+  <script type="text/javascript" src="public/lib/advanced-datatable/js/DT_bootstrap.js"></script>
+  <!--common script for all pages-->
+  <script src="public/lib/common-scripts.js"></script>
+  <!--script for this page-->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="public/Data.js"></script>
+
+</body>
+
+</html>

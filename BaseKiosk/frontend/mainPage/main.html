@@ -1,0 +1,102 @@
+</html>
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>
+    <script src="script.js"></script>
+    <title>Hello, world!</title>
+</head>
+
+<body onload="getcategories()">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#" style=" width: 5%;"><img src="../goodByePAge/logo.svg" alt="logo" width="100%">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav mr-auto" id="menu">
+                </ul>
+                <!-- <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form> -->
+        </div>
+    </nav> 
+       <div class="card text-center" id="box">
+        <div class="card-header" id="para">
+          your order 
+        </div>
+        <div class="card-body">
+                                <table class="table table-condensed">
+                                    <thead>
+                                        <tr>
+                                            <td><strong id="price table">Item</strong></td>
+                                            <td class="text-center" id="price table"><strong>Price</strong></td>
+                                            <td class="text-center" id="price table"><strong>Quantity</strong></td>
+                                            <td class="text-right"  id="price table"><strong>Totals</strong></td>
+                                        </tr>
+                                    </thead>
+                                    <tbody id=bill>
+                                    </tbody>
+                                </table>
+            <a href="#" class="btn btn-primary" style="float: left; margin: 2%; width: 100px;" >Done</a>
+            <a href="#" class="btn btn-warning"style="float: left;margin: 2%; width: 100px;" >Clear</a>
+            <form action="" style="float: right;"> 
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">code Promo</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <button type="button" class="btn btn-info">confirm</button>
+            </form>
+            
+        </div>
+    </div>
+<section class="card-container" id="cards">
+
+    <div class="card">
+
+    <div class="card-body">
+        <h5 class="card-title">choose a category from the menu</h5>
+
+    </div>
+    </div>
+
+
+
+</section>
+
+        <!-- position: fixed;
+        bottom: 0%;
+        width: 100%; -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

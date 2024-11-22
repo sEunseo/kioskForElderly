@@ -1,0 +1,23 @@
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+ body {
+     margin: 0;
+     background-color: #FFB57F
+ }
+ button {
+     margin-top: 15%;
+     color: black !important;
+     background-color: #FFEB00 !important;
+     border: none !important;
+     width: 50%;
+ }
+ .container{
+     margin-top: 10%;
+ }
+ a {
+     width: 50%;
+      background-color: #FFEB00 !important;
+ }
