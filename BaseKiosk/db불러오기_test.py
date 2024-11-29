@@ -1,29 +1,40 @@
 import csv
 import sqlite3
+import traceback
 
 # 데이터베이스에 연결
 con = sqlite3.connect('data.db')
 cursor = con.cursor()
 
-# 테이블 생성
-cursor.execute('''
-                CREATE TABLE menu(
-                id int,
-                category text, 
-                category_num int,
-                degree text,
-                name text,
-                price int,
-                info text
-                )''')
+try:
+    with open('data.csv', 'r', encoding='utf-8') as file:
+        csv_data = csv.reader(file)
+        
+        # Check if the file is empty
+        first_row = next(csv_data, None)  # Try to read the first row (header)
+        if first_row is None:
+            print("Error: The CSV file is empty.")
+        else:
+            print("Processing data from CSV...")
+            for row in csv_data:
+                if len(row) == 7:  # Ensure the row has the correct number of columns
+                    cursor.execute(
+                        'INSERT INTO menu (id, category, category_num, degree, name, price, info) VALUES (?, ?, ?, ?, ?, ?, ?)',
+                        row
+                    )
+                else:
+                    print(f"Skipping invalid row: {row}")
+            
+            # Only commit if data was inserted
+            con.commit()
+            print("Data inserted successfully!")
 
-#csv 파일 읽기 및 데이터베이스에 삽입
-with open('data.csv', 'r') as file:
-    csv_data = csv.reader(file)
-    next(csv_data) # 첫번째 행은 헤더이므로 건너뜀
-    for row in csv_data:
-        cursor.execute('INSERT INTO menu VALUES (?, ?, ?, ?, ?, ?, ?)', row)
-
-#변경사항 저장 및 연결 종료
-con.commit()
-con.close()
+except Exception as e:
+    # Print full traceback and error message for debugging
+    print("An unexpected error occurred:")
+    print(f"Error message: {e}")
+    print("Stack trace:")
+    traceback.print_exc()  # This will print the stack trace to help identify the issue
+finally:
+    # 연결 종료
+    con.close()
